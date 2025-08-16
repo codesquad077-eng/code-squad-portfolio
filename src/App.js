@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { AnimatePresence } from "framer-motion";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Projects from "./components/Projects";
+import Testimonials from "./components/Testimonials";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import ThreeBackground from "./components/ThreeBackground";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="relative min-h-screen overflow-x-hidden bg-cs-dark">
+      <ThreeBackground />
+      <Navbar />
+      <main>
+        <AnimatePresence mode="wait">
+          <Hero />
+          <About />
+          <Services />
+          <Projects />
+          <Testimonials />
+          <Contact />
+        </AnimatePresence>
+      </main>
+      <Footer />
     </div>
   );
 }
-
-export default App;
